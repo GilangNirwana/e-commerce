@@ -13,6 +13,12 @@
         @endif
 
         <form method="POST" action="{{ route('login') }}">
+            <div class="flex justify-center mb-5">
+            <p class="text-3xl font-bold">Login</p>
+        </div>
+        <div class="flex justify-end">
+            <a href="{{ route('register') }}">Daftar</a>
+        </div>
             @csrf
 
             <div>
@@ -25,24 +31,24 @@
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
-            <div class="block mt-4">
+            {{-- <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <input id="remember_me" type="checkbox" class="form-checkbox" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
-            </div>
+            </div> --}}
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    <a class="text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Login') }}
-                </x-jet-button>
             </div>
+            <div class="my-5 flex justify-center items-center">
+                <button class="uppercase px-8 py-2 rounded-lg bg-blue-600 text-blue-50 w-1/2 shadow-sm hover:shadow-md">Login</button>
+            </div>
+        </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

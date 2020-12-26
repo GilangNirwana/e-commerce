@@ -8,7 +8,9 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
+            <div class="flex justify-center mb-5">
+                <p class="text-3xl font-bold">Register</p>
+            </div>
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
